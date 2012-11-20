@@ -231,13 +231,14 @@ function Ice:loadBox( name )
 		
 	if not box then
 		self._boxes[ #self._boxes + 1 ] = self:newBox( name )
+	
+		self._boxes[ #self._boxes ]:load()
+	
+		self._boxes[ #self._boxes ]:save()
+		
+		box = self._boxes[ #self._boxes ]
 	end
-	
-	self._boxes[ #self._boxes ]:load()
-	
-	self._boxes[ #self._boxes ]:save()
-	
-	return self._boxes[ #self._boxes ]
+	return box
 end
 
 --- Stores/adjusts a value in an IceBox.
