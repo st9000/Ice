@@ -195,7 +195,7 @@ end
 function Ice:getBox( name )
 	for i = 1, #self._boxes, 1 do
 		if self._boxes[i]:getName() == name then
-			return self[ name ]
+			return self._boxes[ i ]
 		end
 	end
 end
