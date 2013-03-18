@@ -539,6 +539,15 @@ function IceBox:getItems()
 	return self._items
 end
 
+-- clears the icebox and sets its value as a copy of a table.
+-- @set the table value as items.
+function IceBox:setItems(items)
+    self._items={}
+    for k,v in pairs(items) do
+        self._items[k] = v
+    end
+end
+
 --- Returns the header of the icebox.
 -- @return The header.
 function IceBox:getHeader()
@@ -551,7 +560,7 @@ function IceBox:enableAutomaticSaving()
 end
 
 --- Disables automatic saving.
-function IceBox:disbleAutomaticSaving()
+function IceBox:disableAutomaticSaving()
 	self._automaticSavingEnabled = false
 end
 
